@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title optimized for SEO and branding -->
+  <title>NexoraDigital - Contact Us</title>
+
+  <!-- Google Fonts for futuristic typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./images/favi/favicon.ico">
+
+  <style>
+    /* --------------------------------------- */
+    /* Global Styles */
+    /* --------------------------------------- */
+    /* Reset default margins, padding, and box-sizing for consistency */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styles for dark, futuristic theme */
+    body {
+      background: #0A0A0A; /* Deep black background for sci-fi aesthetic */
+      color: #E0E0E0; /* Light gray text for readability */
+      font-family: 'Roboto', sans-serif; /* Clean, modern font */
+      font-size: 16px; /* Base font size */
+      line-height: 1.6; /* Improved readability */
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      -webkit-font-smoothing: antialiased; /* Smooth fonts on WebKit browsers */
+      -moz-osx-font-smoothing: grayscale; /* Smooth fonts on Firefox */
+    }
+
+    /* --------------------------------------- */
+    /* Header Styles */
+    /* --------------------------------------- */
+    /* Fixed header for persistent navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.9); /* Semi-transparent black */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      z-index: 1000; /* Ensure header stays above content */
+      box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3); /* Neon blue shadow */
+      backdrop-filter: blur(8px); /* Frosted glass effect */
+      -webkit-backdrop-filter: blur(8px); /* Safari support */
+    }
+
+    /* Logo styling with neon glow animation */
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: #00D4FF; /* Neon blue */
+      text-shadow: 0 0 10px #00D4FF, 0 0 20px #00D4FF, 0 0 30px #00D4FF;
+      letter-spacing: 3px;
+      animation: neonPulse 2.5s infinite alternate;
+      cursor: pointer;
+    }
+
+    /* Navigation list styling */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navigation link styling */
+    nav a {
+      color: #E0E0E0; /* Light gray */
+      text-decoration: none;
+      font-size: 18px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      position: relative;
+      transition: color 0.4s ease;
+      -webkit-transition: color 0.4s ease;
+    }
+
+    /* Sliding underline effect for nav links */
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      background: #00D4FF; /* Neon blue */
+      transition: width 0.4s ease;
+      -webkit-transition: width 0.4s ease;
+    }
+
+    /* Expand underline on hover */
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Nav link hover effect */
+    nav a:hover {
+      color: #00D4FF;
+      text-shadow: 0 0 8px #00D4FF;
+    }
+
+    /* Nav link focus state for accessibility */
+    nav a:focus {
+      outline: 2px solid #00D4FF;
+      outline-offset: 4px;
+    }
+
+    /* --------------------------------------- */
+    /* Contact Section */
+    /* --------------------------------------- */
+    /* Main contact section with animated form */
+    .contact {
+      padding: 120px 60px 100px 60px; /* Extra top padding for fixed header */
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0, 212, 255, 0.15), #0A0A0A);
+      min-height: 100vh;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    /* Contact section heading */
+    .contact h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: #00D4FF;
+      text-shadow: 0 0 12px #00D4FF, 0 0 24px #00D4FF;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+
+    /* Contact subheading for context */
+    .contact p.intro {
+      font-size: 20px;
+      font-weight: 300;
+      color: #E0E0E0;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.5;
+    }
+
+    /* Contact form container */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto 50px;
+      background: #1A1A1A; /* Dark form background */
+      border: 3px solid #00D4FF; /* Neon blue border */
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+      transform: translateY(50px);
+      opacity: 0;
+      animation: slideIn 0.6s ease-out forwards;
+      animation-delay: 0.7s;
+    }
+
+    /* Form field styling */
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: #2A2A2A; /* Dark input background */
+      border: 2px solid #00D4FF; /* Neon blue border */
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      color: #E0E0E0;
+      outline: none;
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+      -webkit-transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* Form field focus effect */
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #00FFFF; /* Brighter neon on focus */
+      box-shadow: 0 0 15px #00D4FF;
+    }
+
+    /* Textarea specific styling */
+    .contact-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Placeholder styling */
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #B0B0B0;
+      font-weight: 300;
+    }
+
+    /* Submit button styling */
+    .submit-button {
+      background: transparent;
+      border: 3px solid #00D4FF;
+      color: #00D4FF;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+      -webkit-transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* Ripple effect for submit button */
+    .submit-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+      -webkit-transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    /* Expand ripple on hover */
+    .submit-button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Submit button hover effect */
+    .submit-button:hover {
+      background: #00D4FF;
+      color: #0A0A0A;
+      box-shadow: 0 0 20px #00D4FF;
+    }
+
+    /* Submit button focus state */
+    .submit-button:focus {
+      outline: 2px solid #00D4FF;
+      outline-offset: 4px;
+    }
+
+    /* Contact info section */
+    .contact-info {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Contact info heading */
+    .contact-info h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #00D4FF;
+      text-shadow: 0 0 8px #00D4FF;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* Social links container within contact section */
+    .contact-info .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    /* Social link styling within contact section */
+    .contact-info .social-links a {
+      color: #00D4FF;
+      text-decoration: none;
+      font-size: 20px;
+      font-family: 'Orbitron', sans-serif;
+      transition: transform 0.4s ease, text-shadow 0.4s ease;
+      -webkit-transition: transform 0.4s ease, text-shadow 0.4s ease;
+    }
+
+    /* Social link hover effect */
+    .contact-info .social-links a:hover {
+      transform: scale(1.3);
+      text-shadow: 0 0 12px #00D4FF;
+    }
+
+    /* Social link focus state */
+    .contact-info .social-links a:focus {
+      outline: 2px solid #00D4FF;
+      outline-offset: 4px;
+    }
+
+    /* --------------------------------------- */
+    /* Footer Styles */
+    /* --------------------------------------- */
+    /* Footer with social links and copyright */
+    footer {
+      padding: 50px 60px;
+      text-align: center;
+      background: #1A1A1A;
+      border-top: 3px solid #00D4FF;
+      box-shadow: 0 -2px 10px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Footer text styling */
+    footer p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #E0E0E0;
+      margin-bottom: 20px;
+    }
+
+    /* Footer social links container */
+    footer .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    /* Footer social link styling */
+    footer .social-links a {
+      color: #00D4FF;
+      text-decoration: none;
+      font-size: 20px;
+      font-family: 'Orbitron', sans-serif;
+      transition: transform 0.4s ease, text-shadow 0.4s ease;
+      -webkit-transition: transform 0.4s ease, text-shadow 0.4s ease;
+    }
+
+    /* Footer social link hover effect */
+    footer .social-links a:hover {
+      transform: scale(1.3);
+      text-shadow: 0 0 12px #00D4FF;
+    }
+
+    /* Footer social link focus state */
+    footer .social-links a:focus {
+      outline: 2px solid #00D4FF;
+      outline-offset: 4px;
+    }
+
+    /* --------------------------------------- */
+    /* Animation Keyframes */
+    /* --------------------------------------- */
+    /* Neon pulse animation for logo and headings */
+    @keyframes neonPulse {
+      0% {
+        text-shadow: 0 0 10px #00D4FF, 0 0 20px #00D4FF, 0 0 30px #00D4FF;
+        -webkit-text-shadow: 0 0 10px #00D4FF, 0 0 20px #00D4FF, 0 0 30px #00D4FF;
+      }
+      100% {
+        text-shadow: 0 0 15px #00D4FF, 0 0 30px #00D4FF, 0 0 50px #00D4FF;
+        -webkit-text-shadow: 0 0 15px #00D4FF, 0 0 30px #00D4FF, 0 0 50px #00D4FF;
+      }
+    }
+
+    /* Fade-in and slide-up animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+      }
+    }
+
+    /* Slide-in animation for contact form */
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+      }
+    }
+
+    /* Fade-in animation for sections */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* --------------------------------------- */
+    /* Responsive Design */
+    /* --------------------------------------- */
+    @media (max-width: 768px) {
+      /* Adjust header for mobile */
+      header {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+
+      /* Reduce logo size */
+      .logo {
+        font-size: 26px;
+        margin-bottom: 12px;
+      }
+
+      /* Stack navigation links */
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      /* Adjust nav link size */
+      nav a {
+        font-size: 15px;
+      }
+
+      /* Adjust contact section padding */
+      .contact {
+        padding: 80px 20px 60px 20px;
+      }
+
+      /* Reduce heading size */
+      .contact h2 {
+        font-size: 34px;
+      }
+
+      /* Reduce intro text size */
+      .contact p.intro {
+        font-size: 18px;
+        max-width: 90%;
+      }
+
+      /* Adjust form padding */
+      .contact-form {
+        padding: 20px;
+      }
+
+      /* Reduce input and textarea padding */
+      .contact-form input,
+      .contact-form textarea {
+        padding: 12px;
+      }
+
+      /* Reduce contact info heading */
+      .contact-info h3 {
+        font-size: 24px;
+      }
+
+      /* Adjust footer padding */
+      footer {
+        padding: 40px 20px;
+      }
+
+      /* Reduce social link size */
+      .social-links a {
+        font-size: 16px;
+        margin: 0 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Further reduce logo size */
+      .logo {
+        font-size: 22px;
+      }
+
+      /* Further reduce nav link size */
+      nav a {
+        font-size: 14px;
+      }
+
+      /* Further reduce contact heading */
+      .contact h2 {
+        font-size: 28px;
+      }
+
+      /* Further reduce intro text */
+      .contact p.intro {
+        font-size: 16px;
+      }
+
+      /* Further reduce form input sizes */
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      /* Further reduce contact info heading */
+      .contact-info h3 {
+        font-size: 20px;
+      }
+
+      /* Reduce submit button size */
+      .submit-button {
+        padding: 10px 25px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Header Section -->
+<header>
+  <div class="logo" aria-label="NexoraDigital Logo">NexoraDigital</div>
+  <nav>
+    <ul>
+      <li><a href="index.html#home" aria-label="Go to Home section">Home</a></li>
+      <li><a href="products.html#products" aria-label="Go to Products section">Products</a></li>
+      <li><a href="features.html#features" aria-label="Go to Features section">Features</a></li>
+      <li><a href="testimonials.html#testimonials" aria-label="Go to Testimonials section">Testimonials</a></li>
+      <li><a href="faq.html#faq" aria-label="Go to FAQ section">FAQ</a></li>
+      <li><a href="#contact" aria-label="Go to Contact section">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <h2>Get in Touch</h2>
+  <p class="intro">Have questions about our digital products or need support? Fill out the form below or reach us via social media. We respond within 24-48 hours.</p>
+  <div class="contact-form">
+    <input type="text" placeholder="Your Name" aria-label="Enter your name" required>
+    <input type="email" placeholder="Your Email" aria-label="Enter your email" required>
+    <textarea placeholder="Your Message" aria-label="Enter your message" required></textarea>
+    <a href="mailto:nexoradigital@gmail.com?subject=Contact%20Us&body=Please%20enter%20your%20message%20here" class="submit-button" aria-label="Send message via email">Send Message</a>
+  </div>
+  <div class="contact-info">
+    <h3>Connect With Us</h3>
+    <div class="social-links">
+      <a href="https://x.com/nexoradigital" aria-label="Follow NexoraDigital on X">X</a>
+      <a href="https://github.com/nexoradigital" aria-label="View NexoraDigital on GitHub">GitHub</a>
+      <a href="mailto:nexoradigital@gmail.com" aria-label="Email NexoraDigital">Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+  <p>© 2025 NexoraDigital. All rights reserved.</p>
+  <div class="social-links">
+    <a href="https://x.com/nexoradigital" aria-label="Follow NexoraDigital on X">X</a>
+    <a href="https://github.com/nexoradigital" aria-label="View NexoraDigital on GitHub">GitHub</a>
+    <a href="mailto:nexoradigital@gmail.com" aria-label="Email NexoraDigital">Email</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll animation for contact section
+  const sections = document.querySelectorAll('.contact');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+</body>
+</html>
