@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page title optimized for SEO and branding -->
-    <title>NexoraDigital - Web Templates & Services</title>
+    <title>NexoraDigital - E-commerce Templates</title>
     <!-- Google Fonts for futuristic typography -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN for icons -->
@@ -16,7 +16,7 @@
         /* --------------------------------------- */
         /* Global Styles */
         /* --------------------------------------- */
-        /* Reset default margins, padding, and box-sizing */
+        /* Reset default margins, padding, and box-sizing for consistency */
         * {
             margin: 0;
             padding: 0;
@@ -26,20 +26,20 @@
         /* Body styles for dark, futuristic theme */
         body {
             background: #0A0A0A; /* Deep black background */
-            color: #E0E0E0; /* Light gray text */
-            font-family: 'Roboto', sans-serif; /* Clean font */
-            font-size: 16px; /* Base font size */
+            color: #E0E0E0; /* Light gray text for readability */
+            font-family: 'Roboto', sans-serif; /* Clean, modern font */
+            font-size: 16px; /* Base font size for scalability */
             line-height: 1.6; /* Improved readability */
             overflow-x: hidden; /* Prevent horizontal scroll */
-            -webkit-font-smoothing: antialiased; /* Smooth fonts */
-            -moz-osx-font-smoothing: grayscale; /* Smooth fonts */
-            scroll-behavior: smooth; /* Smooth scrolling */
+            -webkit-font-smoothing: antialiased; /* Smooth fonts on WebKit browsers */
+            -moz-osx-font-smoothing: grayscale; /* Smooth fonts on macOS Firefox */
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
 
         /* --------------------------------------- */
         /* Header Styles */
         /* --------------------------------------- */
-        /* Fixed header for navigation */
+        /* Fixed header for persistent navigation */
         header {
             position: fixed;
             top: 0;
@@ -50,13 +50,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 60px;
-            z-index: 1000; /* Above content */
+            z-index: 1000; /* Above other content */
             box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3); /* Neon shadow */
-            backdrop-filter: blur(8px); /* Frosted glass */
+            backdrop-filter: blur(8px); /* Frosted glass effect */
             -webkit-backdrop-filter: blur(8px); /* Safari support */
         }
 
-        /* Logo styling with neon glow */
+        /* Logo styling with neon glow effect */
         .logo {
             font-family: 'Orbitron', sans-serif;
             font-size: 32px;
@@ -69,14 +69,14 @@
             cursor: pointer;
         }
 
-        /* Navigation list */
+        /* Navigation list for menu items */
         nav ul {
             list-style: none;
             display: flex;
-            gap: 35px;
+            gap: 35px; /* Spacing between nav items */
         }
 
-        /* Navigation links */
+        /* Navigation links styling */
         nav a {
             color: #E0E0E0;
             text-decoration: none;
@@ -89,7 +89,7 @@
             -moz-transition: color 0.4s ease;
         }
 
-        /* Underline effect for nav links */
+        /* Underline effect for nav links on hover/active */
         nav a::after {
             content: '';
             position: absolute;
@@ -114,40 +114,40 @@
 
         nav a:focus {
             outline: 2px solid #00D4FF;
-            outline-offset: 4px;
+            outline-offset: 4px; /* Accessibility focus indicator */
         }
 
         /* --------------------------------------- */
-        /* Products Section */
+        /* Templates Section */
         /* --------------------------------------- */
-        /* Products section with particle background */
-        .products {
+        /* Templates section with particle background */
+        .templates {
             padding: 120px 60px;
             text-align: center;
             background: linear-gradient(180deg, rgba(0, 212, 255, 0.2), #0A0A0A);
             position: relative;
             overflow: hidden;
-            min-height: 100vh;
+            min-height: 100vh; /* Full viewport height */
         }
 
-        /* Particle canvas */
+        /* Particle canvas for background effect */
         #particle-canvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
+            z-index: 0; /* Behind content */
         }
 
-        /* Products content wrapper */
-        .products-content {
+        /* Templates content wrapper */
+        .templates-content {
             position: relative;
-            z-index: 1;
+            z-index: 1; /* Above canvas */
         }
 
-        /* Products heading */
-        .products h2 {
+        /* Templates heading with neon effect */
+        .templates h2 {
             font-family: 'Orbitron', sans-serif;
             font-size: 42px;
             font-weight: 700;
@@ -159,19 +159,19 @@
             -webkit-animation: fadeInUp 1.2s ease-out forwards;
         }
 
-        /* Product grid */
-        .product-grid {
+        /* Template grid for responsive layout */
+        .template-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 50px;
             max-width: 1200px;
-            margin: 0 auto 80px;
+            margin: 0 auto;
         }
 
-        /* Product card */
-        .product-card {
-            background: #1A1A1A;
-            border: 3px solid #00D4FF;
+        /* Template card styling */
+        .template-card {
+            background: #1A1A1A; /* Dark card background */
+            border: 3px solid #00D4FF; /* Neon border */
             border-radius: 20px;
             padding: 30px;
             transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
@@ -180,23 +180,25 @@
             transform: translateY(50px);
             opacity: 0;
             animation: slideIn 0.6s ease-out forwards;
-            perspective: 1000px;
+            perspective: 1000px; /* 3D hover effect */
         }
 
         /* Staggered animations for cards */
-        .product-card:nth-child(1) { animation-delay: 0.2s; }
-        .product-card:nth-child(2) { animation-delay: 0.4s; }
-        .product-card:nth-child(3) { animation-delay: 0.6s; }
-        .product-card:nth-child(4) { animation-delay: 0.8s; }
+        .template-card:nth-child(1) { animation-delay: 0.2s; }
+        .template-card:nth-child(2) { animation-delay: 0.4s; }
+        .template-card:nth-child(3) { animation-delay: 0.6s; }
+        .template-card:nth-child(4) { animation-delay: 0.8s; }
+        .template-card:nth-child(5) { animation-delay: 1.0s; }
+        .template-card:nth-child(6) { animation-delay: 1.2s; }
 
-        .product-card:hover {
+        .template-card:hover {
             transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
             box-shadow: 0 0 25px #00D4FF, 0 0 40px #00D4FF;
-            border-color: #00FFFF;
+            border-color: #00FFFF; /* Brighter neon on hover */
         }
 
-        /* Product preview image */
-        .product-image {
+        /* Template preview image */
+        .template-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -205,7 +207,7 @@
             border: 2px solid #00D4FF;
         }
 
-        .product-card h3 {
+        .template-card h3 {
             font-family: 'Orbitron', sans-serif;
             font-size: 28px;
             font-weight: 700;
@@ -214,13 +216,20 @@
             margin-bottom: 15px;
         }
 
-        .product-card p {
+        .template-card .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00D4FF;
+            margin-bottom: 15px;
+        }
+
+        .template-card p {
             font-size: 16px;
             font-weight: 300;
             margin-bottom: 25px;
         }
 
-        /* See More button with ripple effect and icon */
+        /* See More button with icon and ripple effect */
         .see-more-button {
             background: #00D4FF;
             color: #0A0A0A;
@@ -242,7 +251,7 @@
         }
 
         .see-more-button i {
-            font-size: 14px;
+            font-size: 14px; /* Icon size */
         }
 
         .see-more-button::before {
@@ -271,110 +280,6 @@
         }
 
         .see-more-button:focus {
-            outline: 2px solid #00D4FF;
-            outline-offset: 4px;
-        }
-
-        /* --------------------------------------- */
-        /* Custom Order Section */
-        /* --------------------------------------- */
-        /* Custom order section */
-        .custom-order {
-            padding: 80px 60px;
-            text-align: center;
-            background: #0A0A0A;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards;
-            animation-delay: 1s;
-            -webkit-animation: fadeIn 1.5s ease-out forwards;
-        }
-
-        .custom-order h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 36px;
-            color: #00D4FF;
-            text-shadow: 0 0 12px #00D4FF;
-            margin-bottom: 30px;
-        }
-
-        .custom-order p {
-            font-size: 18px;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-
-        /* Custom order form */
-        .custom-order-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            text-align: left;
-        }
-
-        .form-group label {
-            font-size: 14px;
-            color: #00D4FF;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            background: #1A1A1A;
-            border: 2px solid #00D4FF;
-            border-radius: 10px;
-            padding: 15px;
-            color: #E0E0E0;
-            font-size: 16px;
-            font-family: 'Roboto', sans-serif;
-            transition: border-color 0.4s, box-shadow 0.4s;
-            -webkit-transition: border-color 0.4s, box-shadow 0.4s;
-            -moz-transition: border-color 0.4s, box-shadow 0.4s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: #00FFFF;
-            box-shadow: 0 0 15px #00D4FF;
-            outline: none;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .submit-button {
-            background: #00D4FF;
-            color: #0A0A0A;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.4s, box-shadow 0.4s;
-            -webkit-transition: transform 0.4s, box-shadow 0.4s;
-            -moz-transition: transform 0.4s, box-shadow 0.4s;
-            box-shadow: 0 0 15px #00D4FF;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px #00D4FF;
-        }
-
-        .submit-button:focus {
             outline: 2px solid #00D4FF;
             outline-offset: 4px;
         }
@@ -462,11 +367,6 @@
             }
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
         /* --------------------------------------- */
         /* Responsive Design */
         /* --------------------------------------- */
@@ -491,33 +391,21 @@
                 font-size: 15px;
             }
 
-            .products {
+            .templates {
                 padding: 80px 20px;
             }
 
-            .products h2 {
+            .templates h2 {
                 font-size: 34px;
             }
 
-            .product-grid {
-                grid-template-columns: 1fr;
+            .template-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 30px;
             }
 
-            .product-card {
+            .template-card {
                 padding: 20px;
-            }
-
-            .custom-order {
-                padding: 80px 20px;
-            }
-
-            .custom-order h2 {
-                font-size: 28px;
-            }
-
-            .custom-order-form {
-                padding: 0 10px;
             }
 
             footer {
@@ -531,15 +419,15 @@
         }
 
         @media (max-width: 480px) {
-            .products h2, .custom-order h2 {
+            .templates h2 {
                 font-size: 28px;
             }
 
-            .product-card h3 {
+            .template-card h3 {
                 font-size: 24px;
             }
 
-            .product-image {
+            .template-image {
                 height: 150px;
             }
 
@@ -551,17 +439,6 @@
             .see-more-button i {
                 font-size: 12px;
             }
-
-            .form-group input,
-            .form-group textarea,
-            .form-group select {
-                font-size: 14px;
-            }
-
-            .submit-button {
-                padding: 12px 20px;
-                font-size: 14px;
-            }
         }
     </style>
 </head>
@@ -572,7 +449,7 @@
     <nav>
         <ul>
             <li><a href="index.html#home" aria-label="Go to Home section">Home</a></li>
-            <li><a href="#products" class="active" aria-label="Go to Products section">Products</a></li>
+            <li><a href="products.html#products" aria-label="Go to Products section">Products</a></li>
             <li><a href="features.html#features" aria-label="Go to Features section">Features</a></li>
             <li><a href="testimonials.html#testimonials" aria-label="Go to Testimonials section">Testimonials</a></li>
             <li><a href="faq.html#faq" aria-label="Go to FAQ section">FAQ</a></li>
@@ -581,69 +458,56 @@
     </nav>
 </header>
 
-<!-- Products Section -->
-<section id="products" class="products">
+<!-- Templates Section -->
+<section id="templates" class="templates">
     <canvas id="particle-canvas"></canvas>
-    <div class="products-content">
-        <h2>Explore Our Web Templates & Services</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1513694203232-719a263e764e" alt="Portfolio Template Preview" class="product-image">
-                <h3>Portfolio Template</h3>
-                <p>Modern HTML, CSS, and JavaScript template for showcasing your personal or professional work.</p>
-                <a href="portfolio.html#templates" class="see-more-button" aria-label="See more about Portfolio Template"><i class="fas fa-arrow-right"></i> See More</a>
+    <div class="templates-content">
+        <h2>Explore Our E-commerce Templates</h2>
+        <div class="template-grid">
+            <div class="template-card">
+                <img src="https://images.unsplash.com/photo-1556742524-750f2ab949fb" alt="Minimal E-commerce Template Preview" class="template-image">
+                <h3>Minimal E-commerce</h3>
+                <div class="price">$10</div>
+                <p>Clean and simple HTML, CSS, and JavaScript template for a streamlined online store with intuitive navigation.</p>
+                <a href="https://gumroad.com/nexoradigital/minimal-ecommerce" class="see-more-button" aria-label="See more about Minimal E-commerce Template"><i class="fas fa-arrow-right"></i> See More</a>
             </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1556742524-750f2ab949fb" alt="E-commerce Template Preview" class="product-image">
-                <h3>E-commerce Template</h3>
-                <p>Responsive template with HTML, CSS, and JavaScript for building online stores.</p>
-                <a href="e-commerce.html#templates" class="see-more-button" aria-label="See more about E-commerce Template"><i class="fas fa-arrow-right"></i> See More</a>
+            <div class="template-card">
+                <img src="https://images.unsplash.com/photo-1599487488935-2d2d92c7ebed" alt="Luxury E-commerce Template Preview" class="template-image">
+                <h3>Luxury E-commerce</h3>
+                <div class="price">$15</div>
+                <p>Elegant HTML, CSS, and JavaScript template with premium design, perfect for high-end products and brands.</p>
+                <a href="https://gumroad.com/nexoradigital/luxury-ecommerce" class="see-more-button" aria-label="See more about Luxury E-commerce Template"><i class="fas fa-arrow-right"></i> See More</a>
             </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="University Project Package Preview" class="product-image">
-                <h3>University Project Package</h3>
-                <p>Customizable web app project for university assignments, built with modern frameworks.</p>
-                <a href="universityprojectpackage.html#templates" class="see-more-button" aria-label="See more about University Project Package"><i class="fas fa-arrow-right"></i> See More</a>
+            <div class="template-card">
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f" alt="Tech E-commerce Template Preview" class="template-image">
+                <h3>Tech E-commerce</h3>
+                <div class="price">$12</div>
+                <p>Futuristic HTML, CSS, and JavaScript template designed for tech gadgets and innovative products.</p>
+                <a href="https://gumroad.com/nexoradigital/tech-ecommerce" class="see-more-button" aria-label="See more about Tech E-commerce Template"><i class="fas fa-arrow-right"></i> See More</a>
             </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Professional Website Package Preview" class="product-image">
-                <h3>Professional Website Package</h3>
-                <p>Full custom website development tailored to your business or personal needs.</p>
-                <a href="professionalwebpackage.html#templates" class="see-more-button" aria-label="See more about Professional Website Package"><i class="fas fa-arrow-right"></i> See More</a>
+            <div class="template-card">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d" alt="Fashion E-commerce Template Preview" class="template-image">
+                <h3>Fashion E-commerce</h3>
+                <div class="price">$12</div>
+                <p>Trendy HTML, CSS, and JavaScript template with bold visuals, ideal for apparel and fashion brands.</p>
+                <a href="https://gumroad.com/nexoradigital/fashion-ecommerce" class="see-more-button" aria-label="See more about Fashion E-commerce Template"><i class="fas fa-arrow-right"></i> See More</a>
+            </div>
+            <div class="template-card">
+                <img src="https://images.unsplash.com/photo-1586525198364-bdbac066c6fc" alt="Artisan E-commerce Template Preview" class="template-image">
+                <h3>Artisan E-commerce</h3>
+                <div class="price">$10</div>
+                <p>Rustic HTML, CSS, and JavaScript template for handmade crafts and artisanal products.</p>
+                <a href="https://gumroad.com/nexoradigital/artisan-ecommerce" class="see-more-button" aria-label="See more about Artisan E-commerce Template"><i class="fas fa-arrow-right"></i> See More</a>
+            </div>
+            <div class="template-card">
+                <img src="https://images.unsplash.com/photo-1590664861596-4c42b71c150f" alt="Eco E-commerce Template Preview" class="template-image">
+                <h3>Eco E-commerce</h3>
+                <div class="price">$15</div>
+                <p>Sustainable HTML, CSS, and JavaScript template with green design for eco-friendly products.</p>
+                <a href="https://gumroad.com/nexoradigital/eco-ecommerce" class="see-more-button" aria-label="See more about Eco E-commerce Template"><i class="fas fa-arrow-right"></i> See More</a>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Custom Order Section -->
-<section id="custom-order" class="custom-order">
-    <h2>Order a Custom Website</h2>
-    <p>Need a unique website? Let us build it for you! Fill out the form below to get started.</p>
-    <form class="custom-order-form">
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-        <div class="form-group">
-            <label for="description">Website Description</label>
-            <textarea id="description" name="description" placeholder="Describe your website needs (e.g., portfolio, e-commerce)" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="budget">Budget Range</label>
-            <select id="budget" name="budget" required>
-                <option value="" disabled selected>Select budget range</option>
-                <option value="0-500">$0 - $500</option>
-                <option value="500-1000">$500 - $1,000</option>
-                <option value="1000-2000">$1,000 - $2,000</option>
-                <option value="2000+">$2,000+</option>
-            </select>
-        </div>
-        <button type="submit" class="submit-button" aria-label="Submit custom website order">Submit Request</button>
-    </form>
 </section>
 
 <!-- Footer Section -->
@@ -657,7 +521,7 @@
 </footer>
 
 <script>
-    // Particle effect for products section
+    // Particle effect for templates section
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -715,7 +579,7 @@
     });
 
     // Scroll animation for sections
-    const sections = document.querySelectorAll('.products, .custom-order');
+    const sections = document.querySelectorAll('.templates');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -725,22 +589,6 @@
     }, { threshold: 0.1 });
 
     sections.forEach(section => observer.observe(section));
-
-    // Custom order form submit
-    const form = document.querySelector('.custom-order-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const description = document.getElementById('description').value;
-        const budget = document.getElementById('budget').value;
-        if (name && email && description && budget) {
-            alert(`Custom website request submitted (static, no backend):\nName: ${name}\nEmail: ${email}\nDescription: ${description}\nBudget: ${budget}`);
-            form.reset();
-        } else {
-            alert('Please fill out all fields.');
-        }
-    });
 </script>
 </body>
 </html>
